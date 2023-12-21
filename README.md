@@ -1,5 +1,34 @@
-Список выполненных задач:
-  - создание и коннект с базой данных на PostgreSQL.
-    Изменил порт "5432" на "5433" и наименование БД "jira" на "postgres", т.к. не мог подключиться к БД и запуститься
-    в браузере.
-  - задание 1. Разобраться со структурой проекта (onboarding).
+## [REST API](http://localhost:8080/doc)
+
+## Концепция:
+
+- Spring Modulith
+    - [Spring Modulith: достигли ли мы зрелости модульности](https://habr.com/ru/post/701984/)
+    - [Introducing Spring Modulith](https://spring.io/blog/2022/10/21/introducing-spring-modulith)
+    - [Spring Modulith - Reference documentation](https://docs.spring.io/spring-modulith/docs/current-SNAPSHOT/reference/html/)
+
+```
+  url: jdbc:postgresql://localhost:5432/jira
+  username: jira
+  password: JiraRush
+```
+
+- Есть 2 общие таблицы, на которых не fk
+    - _Reference_ - справочник. Связь делаем по _code_ (по id нельзя, тк id привязано к окружению-конкретной базе)
+    - _UserBelong_ - привязка юзеров с типом (owner, lead, ...) к объекту (таска, проект, спринт, ...). FK вручную будем
+      проверять
+
+## Аналоги
+
+- https://java-source.net/open-source/issue-trackers
+
+## Тестирование
+
+- https://habr.com/ru/articles/259055/
+  
+## Список выполненных задач:
+* Создание и коннект с базой данных на PostgreSQL. Изменил порт "5432" на "5433" 
+  и наименование БД "jira" на "postgres", т.к. не мог подключиться к БД и запуститься
+  в браузере.
+1. Разобраться со структурой проекта (onboarding). 
+2. Сделать рефакторинг метода com.javarush.jira.bugtracking.attachment.FileUtil#upload чтоб он использовал современный подход для работы с файловой системмой.
