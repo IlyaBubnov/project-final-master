@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: ${DB_HOST}:${DB_PORT}/postgres
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: ${CLIENT_REGISTRATION_GITHUB_CLIENTID}
+            client-secret: ${CLIENT_REGISTRATION_GITHUB_CLIENTSECRET}
+          google:
+            client-id: ${CLIENT_REGISTRATION_GOOGLE_CLIENTID}
+            client-secret: ${CLIENT_REGISTRATION_GOOGLE_CLIENTSECRET}
+          gitlab:
+            client-id: ${CLIENT_REGISTRATION_GITLAB_CLIENTID}
+            client-secret: ${CLIENT_REGISTRATION_GITLAB_CLIENTSECRET}
+
+  mail:
+    host: smtp.gmail.com
+    username: jira4jr@gmail.com
+    password: zdfzsrqvgimldzyj
+    port: 587
